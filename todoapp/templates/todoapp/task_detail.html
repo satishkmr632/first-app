@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if task.created_at %}
+            <div class="date">
+                {{ task.created_at }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'task_edit' pk=task.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ task.task_name }}</h1>
+        <p>{{ task.is_done }}</p>
+    </div>
+{% endblock %}

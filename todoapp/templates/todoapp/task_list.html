@@ -1,0 +1,13 @@
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+    {% for task in tasks %}
+        <div class="post">
+            <div class="date">
+                <h3>Task Created : {{ task.created_at }}</h3>
+            </div>
+            <h2>Task Name : <a href="{% url 'task_detail' pk=task.pk %}">{{ task.task_name }}</a></h2>
+            <p>Task Done : {{ task.is_done }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
